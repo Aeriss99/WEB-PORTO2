@@ -1,42 +1,49 @@
-# Lingga Shieva Ardyansyah - Developer Portfolio 🚀
+# Lingga Shieva Ardyansyah - Developer Portfolio
 
-## 1. Project Title
-**Lingga Shieva Portfolio Website**
+Portfolio website pribadi untuk menampilkan profil, skill, proyek, dan kontak profesional dalam format yang ringkas dan mudah dibaca recruiter.
 
-## 2. Project Description
-Portfolio ini adalah personal project yang dirancang seperti implementasi web profile untuk kebutuhan client profesional. Fokus utamanya adalah menyajikan profil developer, ringkasan pengalaman, showcase project, dan kanal kontak dalam satu halaman yang cepat, responsif, serta mudah dipelihara. Struktur konten dan presentasi dibuat agar relevan untuk proses recruitment, freelance pitching, dan personal branding.
+## Overview
+Website ini dibangun sebagai single-page portfolio dengan fokus pada:
+- presentasi profil developer secara jelas
+- struktur konten yang rapi untuk proses rekrutmen
+- performa ringan dan tampilan responsif
 
-## 3. Demo Preview
-- 🌐 **Live Demo:** [https://lingz99.my.id](https://lingz99.my.id)
-- 💻 **GitHub Profile:** [https://github.com/Aeriss99](https://github.com/Aeriss99)
+## Professional Branding
+I build practical web products that help teams work faster, with clean interfaces and reliable backend foundations.
 
-## 4. Tech Stack
-- **HTML5** - struktur konten aplikasi
-- **CSS3** - styling, layout, dan responsive design
-- **JavaScript (Vanilla)** - interaksi UI (hamburger menu)
-- **Git & GitHub** - version control dan deployment workflow
+## Website Sections
+- **Hero**: identitas, role, dan ringkasan value proposition
+- **About**: latar belakang belajar dan pendekatan kerja
+- **Experience**: skill frontend dan backend
+- **Projects**: showcase proyek dengan deskripsi terstruktur
+- **Contact**: akses cepat ke email dan sosial profesional
 
-## 5. Features
-- ✅ Responsive single-page portfolio (desktop, tablet, mobile)
-- ✅ Section terstruktur: About, Experience, Projects, Contact
-- ✅ Project showcase dengan metadata ala real-world software project
-- ✅ Direct social/contact links untuk networking profesional
-- ✅ UI ringan dengan fokus pada readability dan clarity
+## Tech Stack
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- Git & GitHub
 
-## 6. Installation Guide
+## Key Features
+- Responsive layout (desktop, tablet, mobile)
+- Navigation desktop + hamburger menu mobile
+- Project showcase dengan deskripsi yang lebih profesional
+- Direct contact links (email, LinkedIn, GitHub, dan sosial lain)
+
+## Local Development
 1. Clone repository:
-   ```bash
-   git clone https://github.com/Aeriss99/<repository-name>.git
-   ```
+```bash
+git clone https://github.com/Aeriss99/<repository-name>.git
+```
 2. Masuk ke folder project:
-   ```bash
-   cd <repository-name>
-   ```
-3. Jalankan secara lokal:
-   - Buka `index.html` langsung di browser, atau
-   - Gunakan local server (opsional), contoh dengan VS Code Live Server.
+```bash
+cd <repository-name>
+```
+3. Jalankan:
+- buka `index.html` langsung di browser, atau
+- gunakan local server (mis. VS Code Live Server)
 
-## 7. Project Structure
+## Project Structure
 ```bash
 .
 ├── index.html
@@ -44,33 +51,19 @@ Portfolio ini adalah personal project yang dirancang seperti implementasi web pr
 ├── mediaqueries.css
 ├── script.js
 ├── assets/
-│   ├── project-1.png
-│   ├── project-2.png
-│   ├── project-3.png
-│   └── ...
 ├── CNAME
 └── README.md
 ```
 
-## 8. Development Status
-🟡 **In Progress**
+## Live Website
+- Website: https://lingz99.my.id
+- GitHub: https://github.com/Aeriss99
 
-Project sudah dapat digunakan sebagai portfolio publik dan terus ditingkatkan dari sisi konten, kualitas UI, serta kedalaman studi kasus project.
+## Status
+In progress. Konten dan kualitas presentasi portfolio terus diperbarui secara bertahap.
 
-## 9. Future Improvements
-- 🔧 Menambahkan halaman detail per project (case study style)
-- 🔧 Integrasi form contact dengan backend/email service
-- 🔧 Penambahan SEO metadata dan Open Graph yang lebih lengkap
-- 🔧 Optimisasi asset image untuk performa mobile yang lebih baik
-- 🔧 Penambahan analytics sederhana untuk tracking engagement
-
-## 10. Author Information
+## Author
 **Lingga Shieva Ardyansyah**
-- GitHub: [@Aeriss99](https://github.com/Aeriss99)
-- LinkedIn: [Lingga Shieva Ardyansyah](https://www.linkedin.com/in/lingga-shieva-ardyansyah-27b343217/)
-- Instagram: [@lingga_ardyansyh](https://www.instagram.com/lingga_ardyansyh/)
-- Website: [lingz99.my.id](https://lingz99.my.id)
-
----
-
-Jika kamu ingin, README ini juga bisa saya lanjutkan dengan badge (build, deploy, license) dan screenshot preview agar lebih menarik saat dilihat recruiter di GitHub. ✨
+- GitHub: https://github.com/Aeriss99
+- LinkedIn: https://www.linkedin.com/in/lingga-shieva-ardyansyah-27b343217/
+- Website: https://lingz99.my.id
