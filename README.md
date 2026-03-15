@@ -1,11 +1,11 @@
 # Lingga Shieva Ardyansyah - Developer Portfolio
 
-This repository contains my personal developer portfolio website. It presents my background, skills, selected projects, and contact information in a format that is easy for recruiters and hiring managers to review.
+This repository contains my personal developer portfolio website. It presents my background, technical skills, one real featured project, and contact information in a format that is easy for recruiters and hiring managers to review.
 
 ## Overview
 This is a single-page portfolio built to:
 - present my profile clearly
-- keep project details structured and easy to scan
+- highlight a real project with direct access from the portfolio
 - stay lightweight and responsive across devices
 
 ## Professional Branding
@@ -15,7 +15,7 @@ I build practical web products with clean interfaces and dependable backend foun
 - **Hero**: name, role, and a short professional summary
 - **About**: learning background and development approach
 - **Experience**: frontend and backend skills used in projects
-- **Projects**: selected work with concise, structured descriptions
+- **Projects**: focused showcase of my real project, **Snake Game**
 - **Contact**: direct links to email and professional profiles
 
 ## Tech Stack
@@ -27,8 +27,13 @@ I build practical web products with clean interfaces and dependable backend foun
 ## Key Features
 - Responsive layout for desktop, tablet, and mobile
 - Desktop navigation with a hamburger menu on smaller screens
-- Project showcase with clear, recruiter-friendly descriptions
+- Dedicated project card for **Snake Game**
+- Direct play button to open the game from `snakes-games/snakes.html`
 - Direct contact links (email, LinkedIn, and GitHub)
+
+## Featured Project
+- **Snake Game**: a simple browser-based snake game built with HTML, CSS, and JavaScript.
+- **Play path**: `snakes-games/snakes.html`
 
 ## Project Structure
 ```bash
@@ -38,6 +43,10 @@ I build practical web products with clean interfaces and dependable backend foun
 ├── mediaqueries.css
 ├── script.js
 ├── assets/
+├── snakes-games/
+│   ├── snakes.html
+│   ├── snakes.css
+│   └── snakes.js
 ├── CNAME
 └── README.md
 ```
