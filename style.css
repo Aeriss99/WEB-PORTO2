@@ -426,6 +426,9 @@ article .icon {
         linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(246, 250, 255, 0.56));
     border: 1px solid rgba(214, 222, 240, 0.75);
     padding-inline: clamp(1rem, 3vw, 2rem);
+    height: auto;
+    min-height: 72vh;
+    padding-bottom: 4vh;
 }
 
 .color-container {
@@ -433,63 +436,32 @@ article .icon {
     background: var(--surface-muted);
 }
 
-.project-img {
-    border-radius: 2rem;
-    width: 90%;
-    height: 90%;
+#projects .about-containers {
+    justify-content: center;
+}
+
+.single-project-card {
+    width: min(100%, 780px);
+    margin-inline: auto;
 }
 
 .project-title {
-    margin: 1rem;
+    margin: 0.4rem 0 1rem;
     color: var(--text-main);
 }
 
 .project-summary {
     text-align: left;
-    margin: 0 1.1rem 0.9rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.project-meta {
-    margin: 0 1.1rem 0.9rem;
-    text-align: left;
-}
-
-.project-meta p {
-    margin: 0.25rem 0;
-    font-size: 0.92rem;
-    color: var(--text-main);
-}
-
-.project-label {
-    margin: 0 1.1rem 0.4rem;
-    text-align: left;
-    font-size: 0.92rem;
-    color: var(--text-main);
-}
-
-.project-feature-list {
-    margin: 0 1.1rem 0.9rem 2.1rem;
-    text-align: left;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-.project-feature-list li {
-    margin-bottom: 0.35rem;
-}
-
-.project-future {
-    margin: 0 1.1rem 1rem;
-    text-align: left;
-    font-size: 0.92rem;
-    line-height: 1.55;
+    margin: 0 auto 1.2rem;
+    width: min(100%, 60ch);
+    font-size: 1rem;
+    line-height: 1.65;
 }
 
 .project-btn {
     color: var(--text-main);
     border-color: var(--border);
+    min-width: 12rem;
 }
 
 /* CONTACT */
