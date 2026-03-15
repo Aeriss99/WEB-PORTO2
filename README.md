@@ -1,22 +1,22 @@
 # Lingga Shieva Ardyansyah - Developer Portfolio
 
-Portfolio website pribadi untuk menampilkan profil, skill, proyek, dan kontak profesional dalam format yang ringkas dan mudah dibaca recruiter.
+This repository contains my personal developer portfolio website. It presents my background, skills, selected projects, and contact information in a format that is easy for recruiters and hiring managers to review.
 
 ## Overview
-Website ini dibangun sebagai single-page portfolio dengan fokus pada:
-- presentasi profil developer secara jelas
-- struktur konten yang rapi untuk proses rekrutmen
-- performa ringan dan tampilan responsif
+This is a single-page portfolio built to:
+- present my profile clearly
+- keep project details structured and easy to scan
+- stay lightweight and responsive across devices
 
 ## Professional Branding
-I build practical web products that help teams work faster, with clean interfaces and reliable backend foundations.
+I build practical web products with clean interfaces and dependable backend foundations.
 
 ## Website Sections
-- **Hero**: identitas, role, dan ringkasan value proposition
-- **About**: latar belakang belajar dan pendekatan kerja
-- **Experience**: skill frontend dan backend
-- **Projects**: showcase proyek dengan deskripsi terstruktur
-- **Contact**: akses cepat ke email dan sosial profesional
+- **Hero**: name, role, and a short professional summary
+- **About**: learning background and development approach
+- **Experience**: frontend and backend skills used in projects
+- **Projects**: selected work with concise, structured descriptions
+- **Contact**: direct links to email and professional profiles
 
 ## Tech Stack
 - HTML5
@@ -25,23 +25,10 @@ I build practical web products that help teams work faster, with clean interface
 - Git & GitHub
 
 ## Key Features
-- Responsive layout (desktop, tablet, mobile)
-- Navigation desktop + hamburger menu mobile
-- Project showcase dengan deskripsi yang lebih profesional
-- Direct contact links (email, LinkedIn, GitHub, dan sosial lain)
-
-## Local Development
-1. Clone repository:
-```bash
-git clone https://github.com/Aeriss99/<repository-name>.git
-```
-2. Masuk ke folder project:
-```bash
-cd <repository-name>
-```
-3. Jalankan:
-- buka `index.html` langsung di browser, atau
-- gunakan local server (mis. VS Code Live Server)
+- Responsive layout for desktop, tablet, and mobile
+- Desktop navigation with a hamburger menu on smaller screens
+- Project showcase with clear, recruiter-friendly descriptions
+- Direct contact links (email, LinkedIn, and GitHub)
 
 ## Project Structure
 ```bash
@@ -58,9 +45,6 @@ cd <repository-name>
 ## Live Website
 - Website: https://lingz99.my.id
 - GitHub: https://github.com/Aeriss99
-
-## Status
-In progress. Konten dan kualitas presentasi portfolio terus diperbarui secara bertahap.
 
 ## Author
 **Lingga Shieva Ardyansyah**
