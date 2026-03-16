@@ -1,0 +1,97 @@
+body { /* Atur gaya dasar halaman. */
+    margin: 0; /* Hilangkan margin default browser. */
+    min-height: 100vh; /* Pastikan tinggi minimal setinggi viewport. */
+    display: flex; /* Gunakan flex agar konten mudah dipusatkan. */
+    justify-content: center; /* Posisikan konten di tengah horizontal. */
+    align-items: center; /* Posisikan konten di tengah vertikal. */
+} /* Akhir blok body. */
+
+#gameContainer { /* Container utama game. */
+    width: fit-content; /* Lebar mengikuti isi. */
+    display: flex; /* Gunakan flex untuk susunan elemen internal. */
+    flex-direction: column; /* Susun elemen dari atas ke bawah. */
+    align-items: center; /* Center-kan item di sumbu silang. */
+    text-align: center; /* Teks default rata tengah. */
+} /* Akhir blok gameContainer. */
+
+#playArea { /* Area yang berisi board dan petunjuk. */
+    display: flex; /* Susun board dan panel dalam satu baris. */
+    justify-content: center; /* Pusatkan area play secara horizontal. */
+    align-items: flex-start; /* Selaraskan dari bagian atas agar panel tidak memanjang. */
+    gap: 20px; /* Jarak antar board dan panel petunjuk. */
+    margin-bottom: 10px; /* Beri jarak ke elemen bawahnya. */
+} /* Akhir blok playArea. */
+
+#gameBoard { /* Canvas papan permainan. */
+    border: 3px solid; /* Garis tepi board. */
+} /* Akhir blok gameBoard. */
+
+#helpPanel { /* Panel petunjuk kontrol game. */
+    width: 150px; /* Lebar panel petunjuk. */
+    height: fit-content; /* Tinggi panel mengikuti isi konten. */
+    border: 3px solid; /* Garis tepi panel. */
+    border-radius: 12px; /* Buat sudut panel lebih halus. */
+    padding: 10px; /* Jarak isi panel dari tepi. */
+    text-align: left; /* Teks di panel rata kiri. */
+    font-family: "Permanent Marker", cursive; /* Font utama panel. */
+    background-color: #f5f5f5; /* Warna latar panel petunjuk. */
+} /* Akhir blok helpPanel. */
+
+#helpPanel h2 { /* Judul panel petunjuk. */
+    margin-top: 0; /* Hilangkan jarak atas default judul. */
+    margin-bottom: 6px; /* Jarak bawah judul agar rapat. */
+    font-size: 24px; /* Ukuran font judul panel. */
+} /* Akhir blok helpPanel h2. */
+
+#helpPanel p { /* Paragraf isi petunjuk. */
+    margin: 5px 0; /* Jarak vertikal antar baris petunjuk. */
+    font-size: 16px; /* Ukuran font isi petunjuk. */
+    line-height: 1.2; /* Tinggi baris isi petunjuk. */
+} /* Akhir blok helpPanel p. */
+
+#scoreText { /* Teks skor di bawah board. */
+    width: 650px; /* Lebar skor mengikuti lebar board. */
+    align-self: flex-start; /* Posisikan skor mulai dari kiri area board. */
+    font-family: "Permanent Marker", cursive; /* Font skor. */
+    font-size: 100px; /* Ukuran angka skor besar. */
+    text-align: center; /* Teks skor rata tengah. */
+} /* Akhir blok scoreText. */
+
+#controls { /* Area tombol kontrol. */
+    width: 650px; /* Lebar kontrol mengikuti lebar board. */
+    align-self: flex-start; /* Mulai dari tepi kiri area board. */
+    display: flex; /* Susun tombol dalam flex. */
+    justify-content: center; /* Center-kan semua tombol. */
+    gap: 12px; /* Jarak antar tombol. */
+    flex-wrap: wrap; /* Izinkan tombol turun baris jika sempit. */
+} /* Akhir blok controls. */
+
+#resetBtn, #slowBtn, #speedBtn { /* Gaya bersama untuk semua tombol. */
+    font-family: "Permanent Marker", cursive; /* Font tombol. */
+    font-size: 22px; /* Ukuran teks tombol. */
+    min-width: 160px; /* Lebar minimal tiap tombol. */
+    height: 70px; /* Tinggi tombol. */
+    border: 8px solid; /* Tebal garis tepi tombol. */
+    border-radius: 15px; /* Sudut tombol membulat. */
+    cursor: pointer; /* Cursor tangan saat hover tombol. */
+} /* Akhir blok gaya tombol. */
+
+#copyrightText { /* Label copyright di pojok kiri bawah. */
+    position: fixed; /* Posisi tetap saat halaman di-scroll. */
+    left: 12px; /* Jarak dari sisi kiri layar. */
+    bottom: 8px; /* Jarak dari sisi bawah layar. */
+    font-family: "Permanent Marker", cursive; /* Font copyright. */
+    font-size: 18px; /* Ukuran teks copyright. */
+} /* Akhir blok copyrightText. */
+
+@media (max-width: 840px) { /* Aturan untuk layar kecil. */
+    #playArea { /* Ubah layout area permainan saat mobile. */
+        flex-direction: column; /* Susun board dan panel jadi vertikal. */
+        align-items: center; /* Pusatkan item di layar kecil. */
+    } /* Akhir blok playArea mobile. */
+
+    #helpPanel { /* Atur ukuran panel petunjuk di mobile. */
+        width: 300px; /* Lebar panel pada layar kecil. */
+        max-width: 95%; /* Batas maksimal agar tidak melebihi layar. */
+    } /* Akhir blok helpPanel mobile. */
+} /* Akhir media query mobile. */

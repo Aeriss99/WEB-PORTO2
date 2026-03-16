@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snakes Games</title>
+    <link rel="stylesheet" href="snakes.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="playArea">
+            <canvas id="gameBoard" width="650" height="650"></canvas>
+            <aside id="helpPanel">
+                <h2>Petunjuk</h2>
+                <p>Panah: gerakkan ular</p>
+                <p>A: perlambat </p>
+                <p>D: percepat </p>
+                <p>Spasi: ulangi game</p>
+            </aside>
+        </div>
+        <div id="scoreText">0</div>
+        <div id="controls">
+            <button id="slowBtn">Perlambat</button>
+            <button id="speedBtn">Percepat</button>
+            <button id="resetBtn">Tolong Ulangin!</button>
+        </div>
+    </div>
+    <div id="copyrightText">Copyright Lingga Ardyansyah</div>
+    <script src="snakes.js"></script>
+</body>
+</html>
