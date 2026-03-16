@@ -36,6 +36,17 @@ p {
     line-height: 1.7;
 }
 
+.js-ready [data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.js-ready [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* TRANSITION */
 
 a,
@@ -441,21 +452,75 @@ article .icon {
 }
 
 .single-project-card {
-    width: min(100%, 780px);
+    width: min(100%, 960px);
     margin-inline: auto;
+    text-align: center;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 360px);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.project-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project-title {
-    margin: 0.4rem 0 1rem;
+    margin: 0 0 0.9rem;
     color: var(--text-main);
+    text-align: center;
 }
 
 .project-summary {
-    text-align: left;
-    margin: 0 auto 1.2rem;
-    width: min(100%, 60ch);
+    text-align: center;
+    margin: 0 auto 1rem;
+    width: min(100%, 62ch);
     font-size: 1rem;
     line-height: 1.65;
+}
+
+.project-tech {
+    margin: 0 0 1.1rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.project-copy .btn-container {
+    justify-content: center;
+}
+
+.project-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    justify-self: center;
+}
+
+.project-demo-label {
+    margin: 0;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4d5d73;
+    text-align: center;
+}
+
+.project-demo-canvas {
+    width: min(100%, 360px);
+    height: auto;
+    border-radius: 1.2rem;
+    border: 1px solid var(--border);
+    background: #0f172a;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.22);
+    display: block;
 }
 
 .project-btn {

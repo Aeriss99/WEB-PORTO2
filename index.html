@@ -294,18 +294,34 @@
     <h1 class="title">Projects</h1>
     <div class="experience-details-container">
         <div class="about-containers">
-            <div class="details-container color-container single-project-card">
-                <h2 class="experience-sub-title project-title">Snake Game</h2>
-                <p class="project-summary">
-                    Game ular sederhana berbasis HTML, CSS, dan JavaScript dengan kontrol keyboard serta gameplay yang ringan.
-                </p>
-                <div class="btn-container">
-                    <button
-                            class="btn btn-color-2 project-btn"
-                            onclick="location.href='./snakes-games/snakes.html'"
-                    >
-                        Play Snake Game
-                    </button>
+            <div class="details-container color-container single-project-card" data-reveal>
+                <div class="project-content">
+                    <div class="project-copy">
+                        <h2 class="experience-sub-title project-title">Snake Game</h2>
+                        <p class="project-summary">
+                            Game ular sederhana berbasis HTML, CSS, dan JavaScript dengan kontrol keyboard serta gameplay
+                            yang ringan.
+                        </p>
+                        <p class="project-tech"><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+                        <div class="btn-container">
+                            <button
+                                    class="btn btn-color-2 project-btn"
+                                    onclick="location.href='./snakes-games/snakes.html'"
+                            >
+                                Play Snake Game
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-demo" data-reveal data-reveal-delay="120">
+                        <p class="project-demo-label">Live Demo Preview</p>
+                        <canvas
+                                id="snake-demo-canvas"
+                                class="project-demo-canvas"
+                                width="320"
+                                height="320"
+                                aria-label="Snake game animated preview"
+                        ></canvas>
+                    </div>
                 </div>
             </div>
         </div>

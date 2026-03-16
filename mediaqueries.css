@@ -70,6 +70,18 @@
         min-height: 0;
         margin-bottom: 2rem;
     }
+
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+
+    .project-demo {
+        width: 100%;
+    }
+
+    .project-demo-canvas {
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -98,6 +110,20 @@
 
     .btn-container {
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-copy {
+        align-items: center;
+    }
+
+    .project-title,
+    .project-summary,
+    .project-tech {
+        text-align: center;
+    }
+
+    .project-copy .btn-container {
         justify-content: center;
     }
 }
@@ -205,6 +231,10 @@
 
     .text-container {
         text-align: justify;
+    }
+
+    .project-demo-canvas {
+        width: min(100%, 300px);
     }
 }
 
