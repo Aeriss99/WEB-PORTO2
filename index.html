@@ -1,390 +1,376 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#08111f"/>
     <title>Lingga Shieva Ardyansyah</title>
     <link rel="icon" type="image/png" href="./assets/favicon-16x16.png">
-    <link rel="stylesheet" href="style.css?v=20260316"/>
-    <link rel="stylesheet" href="mediaqueries.css?v=20260316"/>
+    <link rel="stylesheet" href="style.css?v=20260607"/>
+    <link rel="stylesheet" href="mediaqueries.css?v=20260607"/>
 </head>
 <body>
-<nav id="desktop-nav">
-    <div class="logo">Lingga Shieva Ardyansyah</div>
-    <div>
+<nav id="desktop-nav" class="site-nav">
+    <a class="logo" href="#profile">Lingga Shieva Ardyansyah</a>
+    <div class="nav-right">
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-    </div>
-</nav>
-<nav id="hamburger-nav">
-    <div class="logo">Lingga Shieva Ardyansyah</div>
-    <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="menu-links">
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-    </div>
-</nav>
-<section id="profile">
-    <div class="section__pic-container">
-        <img src="./assets/foto-jas.png" alt="Lingga Ardyansyah"/>
-    </div>
-    <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Lingga Shieva Ardyansyah</h1>
-        <p class="section__text__p2">Tech Learner</p>
-        <div class="btn-container">
-            <!-- Tombol CV disembunyikan sementara karena file CV final belum tersedia. -->
-            <button class="btn btn-color-1" onclick="location.href='./#contact'">
-                Contact Info
+        <div class="nav-actions">
+            <a class="btn btn-small btn-color-2" href="./assets/cv-ter-update.pdf" download>Download CV</a>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activate light mode" aria-pressed="false">
+                <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+                <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
+                <span class="theme-toggle__thumb" aria-hidden="true"></span>
+                <span class="sr-only" data-theme-label>Activate light mode</span>
             </button>
         </div>
-        <div id="socials-container">
-            <img
-                    src="./assets/linkedin.png"
-                    alt="My LinkedIn profile"
-                    class="icon"
-                    onclick="location.href='https://www.linkedin.com/in/lingga-shieva-ardyansyah-27b343217/'"
-            />
-            <img
-                    src="./assets/instagram.svg"
-                    alt="My Instagram profile"
-                    class="icon"
-                    onclick="location.href='https://www.instagram.com/lingga_ardyansyh/'"
-            />
-            <img
-                    src="./assets/x.svg"
-                    alt="My X (Twitter) profile"
-                    class="icon"
-                    onclick="location.href='https://x.com/linggaardyansyh'"
-            />
-            <img
-                    src="./assets/facebook.svg"
-                    alt="My Facebook profile"
-                    class="icon"
-                    onclick="location.href='https://www.facebook.com/lingz99'"
-            />
-            <img
-                    src="./assets/github.png"
-                    alt="My Github profile"
-                    class="icon"
-                    onclick="location.href='https://github.com/Aeriss99'"
-            />
+    </div>
+</nav>
+<nav id="hamburger-nav" class="site-nav">
+    <div class="mobile-nav-top">
+        <a class="logo" href="#profile">Lingga Shieva Ardyansyah</a>
+        <div class="mobile-nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activate light mode" aria-pressed="false">
+                <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+                <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
+                <span class="theme-toggle__thumb" aria-hidden="true"></span>
+                <span class="sr-only" data-theme-label>Activate light mode</span>
+            </button>
+            <div class="hamburger-menu">
+                <button class="hamburger-icon" type="button" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </div>
-</section>
-<section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="section-container">
-        <div class="section__pic-container">
-            <img
-                    src="./assets/foto-batik.png"
-                    alt="Profile picture"
-                    class="about-pic"
-            />
+    <ul class="menu-links">
+        <li><a href="#about" onclick="toggleMenu(true)">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu(true)">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu(true)">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu(true)">Contact</a></li>
+        <li><a class="mobile-cv-link" href="./assets/cv-ter-update.pdf" download onclick="toggleMenu(true)">Download CV</a></li>
+    </ul>
+</nav>
+<main>
+    <section id="profile" class="hero-section" data-reveal>
+        <div class="hero-copy">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Lingga Shieva Ardyansyah</h1>
+            <p class="section__text__p2">Tech Learner</p>
+            <p class="hero-description">
+                Web Developer building practical and responsive web applications while continuously improving
+                frontend and backend development skills with a clean, user-focused approach.
+            </p>
+            <div class="btn-container hero-actions">
+                <a class="btn btn-color-1" href="#contact">Contact Me</a>
+                <a class="btn btn-color-2" href="#projects">View Projects</a>
+                <a class="btn btn-color-3" href="./assets/cv-ter-update.pdf" download>Download CV</a>
+            </div>
+            <div class="hero-info-grid">
+                <article class="info-card">
+                    <p class="info-card__label">Education</p>
+                    <h2>Information Systems</h2>
+                    <p>Universitas Terbuka</p>
+                </article>
+                <article class="info-card">
+                    <p class="info-card__label">Experience</p>
+                    <h2>Tech Learner</h2>
+                    <p>Continuously learning and building web projects.</p>
+                </article>
+                <article class="info-card">
+                    <p class="info-card__label">Email</p>
+                    <h2>Direct Contact</h2>
+                    <p><a href="mailto:linggaardyansyh1@gmail.com">linggaardyansyh1@gmail.com</a></p>
+                </article>
+                <article class="info-card">
+                    <p class="info-card__label">Tech Stack</p>
+                    <h2>Core Skills</h2>
+                    <div class="stack-pills stack-pills--compact">
+                        <span class="skill-pill">HTML</span>
+                        <span class="skill-pill">CSS</span>
+                        <span class="skill-pill">JavaScript</span>
+                    </div>
+                </article>
+            </div>
+            <div id="socials-container" aria-label="Social links">
+                <a class="social-link" href="https://www.linkedin.com/in/lingga-shieva-ardyansyah-27b343217/" aria-label="LinkedIn profile">
+                    <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon"/>
+                </a>
+                <a class="social-link" href="https://www.instagram.com/lingga_ardyansyh/" aria-label="Instagram profile">
+                    <img src="./assets/instagram.svg" alt="Instagram icon" class="icon"/>
+                </a>
+                <a class="social-link" href="https://x.com/linggaardyansyh" aria-label="X profile">
+                    <img src="./assets/x.svg" alt="X icon" class="icon"/>
+                </a>
+                <a class="social-link" href="https://www.facebook.com/lingz99" aria-label="Facebook profile">
+                    <img src="./assets/facebook.svg" alt="Facebook icon" class="icon"/>
+                </a>
+                <a class="social-link" href="https://github.com/Aeriss99" aria-label="GitHub profile">
+                    <img src="./assets/github.png" alt="GitHub icon" class="icon"/>
+                </a>
+            </div>
         </div>
-        <div class="about-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <img
-                            src="./assets/experience.png"
-                            alt="Experience icon"
-                            class="icon"
-                    />
-                    <h3>Experience</h3>
-                    <p>Tech Enthusiast &amp; Web Developer<br/>Continuously learning and building web projects.</p>
+        <div class="hero-visual" data-reveal data-reveal-delay="140">
+            <div class="hero-image-shell">
+                <img src="./assets/foto-jas.png" alt="Lingga Ardyansyah" class="hero-photo"/>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="panel-section" data-reveal>
+        <div class="section-heading">
+            <p class="section__text__p1">Get To Know More</p>
+            <h2 class="title section-title">About Me</h2>
+        </div>
+        <div class="section-container about-layout">
+            <div class="section__pic-container section__pic-container--about" data-reveal data-reveal-delay="80">
+                <img src="./assets/foto-batik.png" alt="Profile picture" class="about-pic"/>
+            </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <article class="details-container">
+                        <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
+                        <h3>Experience</h3>
+                        <p>Tech Enthusiast &amp; Web Developer continuously learning and building web projects.</p>
+                    </article>
+                    <article class="details-container">
+                        <img src="./assets/education.png" alt="Education icon" class="icon"/>
+                        <h3>Education</h3>
+                        <p>SMK Mutiara Bangsa (Teknik Komputer dan Jaringan)<br/>Universitas Terbuka (S1 Sistem Informasi)</p>
+                    </article>
                 </div>
-                <div class="details-container">
-                    <img
-                            src="./assets/education.png"
-                            alt="Education icon"
-                            class="icon"
-                    />
-                    <h3>Education</h3>
-                    <p>SMK Mutiara Bangsa (Teknik Komputer dan Jaringan)<br/>Universitas Terbuka(S1 Sistem Informasi)
+                <article class="details-container details-container--wide text-card">
+                    <h3>Profile Summary</h3>
+                    <p>
+                        Web Developer building practical and responsive web applications while continuously improving
+                        skills in frontend and backend development. I enjoy learning new technologies, refining UI
+                        details, and creating websites that feel clean, structured, and easy to use.
                     </p>
-                </div>
+                    <div class="stack-block">
+                        <p class="stack-block__label">Simple Tech Stack</p>
+                        <div class="stack-pills">
+                            <span class="skill-pill">HTML</span>
+                            <span class="skill-pill">CSS</span>
+                            <span class="skill-pill">JavaScript</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="text-container">
-                <p>
-                    Web Developer building practical and responsive web applications
-                    while continuously improving skills in frontend and backend development.
+        </div>
+    </section>
+
+    <section id="experience" class="panel-section" data-reveal>
+        <div class="section-heading">
+            <p class="section__text__p1">Explore My</p>
+            <h2 class="title section-title">Experience</h2>
+            <p class="section-description">Current tools and technologies I use while learning and building practical web projects.</p>
+        </div>
+        <div class="experience-details-container">
+            <div class="about-containers skill-columns">
+                <article class="details-container skill-card" data-reveal data-reveal-delay="60">
+                    <h3 class="experience-sub-title">Front End</h3>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>HTML</h4>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>CSS</h4>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>Tailwind</h4>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>JavaScript</h4>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>PHP</h4>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>Material UI</h4>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+                <article class="details-container skill-card" data-reveal data-reveal-delay="120">
+                    <h3 class="experience-sub-title">Back End</h3>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>MySQL</h4>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>Node JS</h4>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>Java</h4>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>Git</h4>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>Express JS</h4>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h4>REST API</h4>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="panel-section" data-reveal>
+        <div class="section-heading">
+            <p class="section__text__p1">Featured Project</p>
+            <h2 class="title section-title">Projects</h2>
+            <p class="section-description">A focused project showcase that highlights practical work and the technologies behind it.</p>
+        </div>
+        <article class="project-card" data-reveal data-reveal-delay="90">
+            <div class="project-copy">
+                <span class="eyebrow">Real Project</span>
+                <h3 class="project-title">Snake Game</h3>
+                <p class="project-summary">
+                    Snake Game is a simple browser-based game built using HTML, CSS, and JavaScript. The player controls
+                    a snake using the keyboard to collect food that appears on the screen. Each food increases the snake's
+                    length and the player's score, and the game ends if the snake hits the wall or its own body.
                 </p>
-            </div>
-        </div>
-    </div>
-    <img
-            src="./assets/arrow.png"
-            alt="Arrow icon"
-            class="icon arrow"
-            onclick="location.href='./#experience'"
-    />
-</section>
-<section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
-    <div class="experience-details-container">
-        <div class="about-containers">
-            <div class="details-container">
-                <h2 class="experience-sub-title">Front End</h2>
-                <div class="article-container">
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>CSS</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Tailwind</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>JavaScript</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>PHP</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Material UI</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
+                <div class="project-meta">
+                    <span>Role: Frontend Developer</span>
+                    <span>Tech Stack: HTML, CSS, JavaScript</span>
+                </div>
+                <div class="stack-pills">
+                    <span class="skill-pill">HTML</span>
+                    <span class="skill-pill">CSS</span>
+                    <span class="skill-pill">JavaScript</span>
+                </div>
+                <div class="btn-container project-actions">
+                    <a class="btn btn-color-1" href="./snakes-games/snakes.html">Play Snake Game</a>
+                    <a class="btn btn-color-2" href="https://github.com/Aeriss99/SNAKES-GAMES">View Project</a>
                 </div>
             </div>
-            <div class="details-container">
-                <h2 class="experience-sub-title">Back End</h2>
-                <div class="article-container">
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>MySQL</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Node JS</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Java</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Git</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Express JS</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                src="./assets/checkmark.png"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>REST API</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                </div>
+            <div class="project-preview">
+                <p class="project-demo-label">Live Demo Preview</p>
+                <canvas
+                    id="snake-demo-canvas"
+                    class="project-demo-canvas"
+                    width="320"
+                    height="320"
+                    aria-label="Snake game animated preview"
+                ></canvas>
+                <p class="project-note">Interactive preview generated directly on the page using JavaScript.</p>
             </div>
+        </article>
+    </section>
+
+    <section id="contact" class="panel-section" data-reveal>
+        <div class="section-heading">
+            <p class="section__text__p1">Get in Touch</p>
+            <h2 class="title section-title">Contact Me</h2>
+            <p class="section-description">Let's connect for opportunities, collaboration, or simply to say hello.</p>
         </div>
-    </div>
-    <img
-            src="./assets/arrow.png"
-            alt="Arrow icon"
-            class="icon arrow"
-            onclick="location.href='./#projects'"
-    />
-</section>
-<section id="projects">
-    <p class="section__text__p1">Featured Project</p>
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-        <div class="about-containers">
-            <div class="details-container color-container single-project-card" data-reveal>
-                <div class="project-content">
-                    <div class="project-copy">
-                        <h2 class="experience-sub-title project-title">Snake Game</h2>
-                        <p class="project-summary">
-                            Snake Game is a simple browser-based game built using HTML, CSS, and JavaScript. The player
-                            controls a snake using the keyboard to collect food that appears on the screen. Each food
-                            increases the snake’s length and the player’s score. The game ends if the snake hits the
-                            wall or its own body. 🐍🎮
-                        </p>
-                        <p class="project-tech"><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
-                        <div class="btn-container">
-                            <button
-                                    class="btn btn-color-2 project-btn"
-                                    onclick="location.href='./snakes-games/snakes.html'"
-                            >
-                                Play Snake Game
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-demo" data-reveal data-reveal-delay="120">
-                        <p class="project-demo-label">Live Demo Preview</p>
-                        <canvas
-                                id="snake-demo-canvas"
-                                class="project-demo-canvas"
-                                width="320"
-                                height="320"
-                                aria-label="Snake game animated preview"
-                        ></canvas>
-                    </div>
+        <div class="contact-info-upper-container">
+            <a class="contact-info-container" href="mailto:linggaardyansyh1@gmail.com">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon"/>
+                <div>
+                    <h3>Email</h3>
+                    <p>linggaardyansyh1@gmail.com</p>
                 </div>
-            </div>
+            </a>
+            <a class="contact-info-container" href="https://www.linkedin.com/in/lingga-shieva-ardyansyah-27b343217/">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon"/>
+                <div>
+                    <h3>LinkedIn</h3>
+                    <p>Professional profile</p>
+                </div>
+            </a>
+            <a class="contact-info-container" href="https://github.com/Aeriss99">
+                <img src="./assets/github.png" alt="GitHub icon" class="icon contact-icon"/>
+                <div>
+                    <h3>GitHub</h3>
+                    <p>Projects and repositories</p>
+                </div>
+            </a>
+            <a class="contact-info-container" href="https://www.instagram.com/lingga_ardyansyh/">
+                <img src="./assets/instagram.svg" alt="Instagram icon" class="icon contact-icon"/>
+                <div>
+                    <h3>Instagram</h3>
+                    <p>@lingga_ardyansyh</p>
+                </div>
+            </a>
+            <a class="contact-info-container" href="https://x.com/linggaardyansyh">
+                <img src="./assets/x.svg" alt="X (Twitter) icon" class="icon contact-icon"/>
+                <div>
+                    <h3>X (Twitter)</h3>
+                    <p>@linggaardyansyh</p>
+                </div>
+            </a>
+            <a class="contact-info-container" href="https://www.facebook.com/lingz99">
+                <img src="./assets/facebook.svg" alt="Facebook icon" class="icon contact-icon"/>
+                <div>
+                    <h3>Facebook</h3>
+                    <p>facebook.com/lingz99</p>
+                </div>
+            </a>
         </div>
-    </div>
-    <img
-            src="./assets/arrow.png"
-            alt="Arrow icon"
-            class="icon arrow"
-            onclick="location.href='./#contact'"
-    />
-</section>
-<section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-            <img
-                    src="./assets/email.png"
-                    alt="Email icon"
-                    class="icon contact-icon email-icon"
-            />
-            <p><a href="mailto:linggaardyansyh1@gmail.com">linggaardyansyh1@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-            <img
-                    src="./assets/linkedin.png"
-                    alt="LinkedIn icon"
-                    class="icon contact-icon"
-            />
-            <p><a href="https://www.linkedin.com/in/lingga-shieva-ardyansyah-27b343217/">LinkedIn</a></p>
-        </div>
-        <div class="contact-info-container">
-            <img
-                    src="./assets/instagram.svg"
-                    alt="Instagram icon"
-                    class="icon contact-icon"
-            />
-            <p><a href="https://www.instagram.com/lingga_ardyansyh/">Instagram</a></p>
-        </div>
-        <div class="contact-info-container">
-            <img
-                    src="./assets/x.svg"
-                    alt="X (Twitter) icon"
-                    class="icon contact-icon"
-            />
-            <p><a href="https://x.com/linggaardyansyh">X (Twitter)</a></p>
-        </div>
-        <div class="contact-info-container">
-            <img
-                    src="./assets/facebook.svg"
-                    alt="Facebook icon"
-                    class="icon contact-icon"
-            />
-            <p><a href="https://www.facebook.com/lingz99">Facebook</a></p>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
 <footer>
     <nav>
         <div class="nav-links-container">
-            <ul class="nav-links">
+            <ul class="nav-links footer-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -394,6 +380,6 @@
     </nav>
     <p>Copyright &#169; 2026 Lingga Ardyansyah. All Rights Reserved.</p>
 </footer>
-<script src="script.js?v=20260316"></script>
+<script src="script.js?v=20260607"></script>
 </body>
 </html>

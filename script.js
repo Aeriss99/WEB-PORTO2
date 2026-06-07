@@ -1,11 +1,97 @@
-function toggleMenu() {
+function toggleMenu(forceClose = false) {
     const menu = document.querySelector(".menu-links");
     const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
+
+    if (!menu || !icon) {
+        return;
+    }
+
+    const willOpen = forceClose ? false : !menu.classList.contains("open");
+    menu.classList.toggle("open", willOpen);
+    icon.classList.toggle("open", willOpen);
+    icon.setAttribute("aria-expanded", String(willOpen));
 }
 
+const root = document.documentElement;
+const themeToggleButtons = document.querySelectorAll("[data-theme-toggle]");
+const themeToggleLabels = document.querySelectorAll("[data-theme-label]");
+const themeStorageKey = "lingz99-theme";
+const themeColorMeta = document.querySelector("meta[name=\"theme-color\"]");
+let drawPreview = null;
+
 document.body.classList.add("js-ready");
+
+function readStoredTheme() {
+    try {
+        return window.localStorage.getItem(themeStorageKey);
+    } catch (error) {
+        return null;
+    }
+}
+
+function persistTheme(theme) {
+    try {
+        window.localStorage.setItem(themeStorageKey, theme);
+    } catch (error) {
+        // Ignore localStorage issues and continue with in-memory theme.
+    }
+}
+
+function updateThemeToggleState(theme) {
+    const nextLabel = theme === "light" ? "Activate dark mode" : "Activate light mode";
+    const isLight = theme === "light";
+
+    themeToggleButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(isLight));
+        button.setAttribute("aria-label", nextLabel);
+    });
+
+    themeToggleLabels.forEach((label) => {
+        label.textContent = nextLabel;
+    });
+}
+
+function setTheme(theme) {
+    root.dataset.theme = theme;
+    persistTheme(theme);
+    updateThemeToggleState(theme);
+
+    if (themeColorMeta) {
+        themeColorMeta.setAttribute("content", theme === "light" ? "#eef4ff" : "#08111f");
+    }
+
+    if (typeof drawPreview === "function") {
+        drawPreview();
+    }
+}
+
+function getInitialTheme() {
+    const storedTheme = readStoredTheme();
+    if (storedTheme === "light" || storedTheme === "dark") {
+        return storedTheme;
+    }
+
+    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+setTheme(getInitialTheme());
+
+themeToggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+        setTheme(nextTheme);
+    });
+});
+
+document.querySelectorAll(".menu-links a").forEach((link) => {
+    link.addEventListener("click", () => toggleMenu(true));
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1200) {
+        toggleMenu(true);
+    }
+});
 
 const revealElements = document.querySelectorAll("[data-reveal]");
 
@@ -16,11 +102,12 @@ if ("IntersectionObserver" in window) {
                 if (!entry.isIntersecting) {
                     return;
                 }
+
                 entry.target.classList.add("is-visible");
                 observer.unobserve(entry.target);
             });
         },
-        { threshold: 0.15 }
+        { threshold: 0.14 }
     );
 
     revealElements.forEach((element) => {
@@ -50,6 +137,11 @@ if (previewCanvas) {
     let direction = { x: 1, y: 0 };
     let food = { x: 12, y: 8 };
     let timerId = null;
+
+    const themeColor = (variableName, fallback) => {
+        const value = getComputedStyle(root).getPropertyValue(variableName).trim();
+        return value || fallback;
+    };
 
     const isOppositeDirection = (nextDirection) =>
         nextDirection.x === -direction.x && nextDirection.y === -direction.y;
@@ -120,11 +212,11 @@ if (previewCanvas) {
         food = randomFood();
     };
 
-    const draw = () => {
-        ctx.fillStyle = "#0f172a";
+    drawPreview = () => {
+        ctx.fillStyle = themeColor("--canvas-bg", "#081120");
         ctx.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
 
-        ctx.strokeStyle = "rgba(148, 163, 184, 0.12)";
+        ctx.strokeStyle = themeColor("--grid-line", "rgba(148, 163, 184, 0.12)");
         for (let i = 0; i <= gridCount; i += 1) {
             const offset = i * cellSize;
             ctx.beginPath();
@@ -138,7 +230,7 @@ if (previewCanvas) {
             ctx.stroke();
         }
 
-        ctx.fillStyle = "#fb7185";
+        ctx.fillStyle = themeColor("--snake-food", "#fb7185");
         ctx.beginPath();
         ctx.arc(
             food.x * cellSize + cellSize / 2,
@@ -150,7 +242,9 @@ if (previewCanvas) {
         ctx.fill();
 
         snake.forEach((segment, index) => {
-            ctx.fillStyle = index === 0 ? "#22d3ee" : "#2dd4bf";
+            ctx.fillStyle = index === 0
+                ? themeColor("--snake-head", "#60a5fa")
+                : themeColor("--snake-body", "#22d3ee");
             ctx.fillRect(
                 segment.x * cellSize + 1.5,
                 segment.y * cellSize + 1.5,
@@ -169,7 +263,7 @@ if (previewCanvas) {
 
         if (isBlocked(nextHead)) {
             resetPreview();
-            draw();
+            drawPreview();
             return;
         }
 
@@ -180,7 +274,7 @@ if (previewCanvas) {
             snake.pop();
         }
 
-        draw();
+        drawPreview();
     };
 
     const startPreview = () => {
@@ -198,7 +292,8 @@ if (previewCanvas) {
         timerId = null;
     };
 
-    draw();
+    resetPreview();
+    drawPreview();
 
     if ("IntersectionObserver" in window) {
         const previewObserver = new IntersectionObserver(
@@ -213,8 +308,20 @@ if (previewCanvas) {
             },
             { threshold: 0.35 }
         );
+
         previewObserver.observe(previewCanvas);
     } else {
         startPreview();
     }
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            stopPreview();
+            return;
+        }
+
+        if (previewCanvas.getBoundingClientRect().top < window.innerHeight) {
+            startPreview();
+        }
+    });
 }

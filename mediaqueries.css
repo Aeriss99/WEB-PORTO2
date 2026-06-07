@@ -1,23 +1,3 @@
-@media screen and (max-width: 1400px) {
-    #profile {
-        height: 83vh;
-        margin-bottom: 6rem;
-    }
-
-    .about-containers {
-        flex-wrap: wrap;
-    }
-
-    #contact,
-    #projects {
-        height: fit-content;
-    }
-
-    .contact-info-upper-container {
-        width: min(760px, 100%);
-    }
-}
-
 @media screen and (max-width: 1200px) {
     #desktop-nav {
         display: none;
@@ -27,244 +7,183 @@
         display: flex;
     }
 
-    #experience,
-    .experience-details-container {
-        margin-top: 2rem;
+    main {
+        width: min(100%, calc(100% - 1.5rem));
+        padding-top: 6.6rem;
     }
 
-    #profile,
-    .section-container {
-        display: block;
-    }
-
-    .arrow {
-        display: none;
-    }
-
-    section,
-    .section-container {
-        height: fit-content;
-    }
-
-    section {
-        margin: 0 5%;
-    }
-
-    .section__pic-container {
-        width: 275px;
-        height: 275px;
-        margin: 0 auto 2rem;
-    }
-
-    .about-containers {
-        margin-top: 0;
-    }
-
-    .contact-info-upper-container {
+    .hero-section {
         grid-template-columns: 1fr;
-        width: min(560px, 100%);
-    }
-
-    #profile {
-        height: auto;
         min-height: 0;
-        margin-bottom: 2rem;
     }
 
-    .project-content {
-        grid-template-columns: 1fr;
-    }
-
-    .project-demo {
+    .hero-copy,
+    .project-copy,
+    .project-preview {
         width: 100%;
     }
 
-    .project-demo-canvas {
-        margin: 0 auto;
+    .hero-visual {
+        order: -1;
+        min-height: 0;
+    }
+
+    .hero-image-shell {
+        width: min(100%, 380px);
+    }
+
+    .hero-info-grid,
+    .contact-info-upper-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-layout,
+    .project-card {
+        grid-template-columns: 1fr;
     }
 }
 
 @media screen and (max-width: 900px) {
-    section {
-        margin: 0 1rem;
-        padding-top: 3.5vh;
+    .site-nav {
+        width: calc(100% - 1rem);
+        top: 0.5rem;
+        padding: 0.85rem 0.9rem;
     }
 
-    #profile {
-        gap: 2rem;
-        padding-block: 1.25rem 1.5rem;
+    main,
+    footer {
+        width: calc(100% - 1rem);
     }
 
-    .section__text__p2 {
-        font-size: 1.15rem;
+    .hero-section,
+    .panel-section {
+        border-radius: 1.5rem;
+    }
+
+    .hero-section {
+        padding: 1.35rem;
+        gap: 1.4rem;
+    }
+
+    .panel-section {
+        padding: 1.3rem;
     }
 
     .title {
-        font-size: 2.1rem;
+        font-size: clamp(2.05rem, 8vw, 3rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 7vw, 2.35rem);
+    }
+
+    .hero-actions,
+    .project-actions,
+    .btn-container {
+        justify-content: flex-start;
     }
 
     .btn {
         width: 100%;
-        max-width: 240px;
-    }
-
-    .btn-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .project-copy {
-        align-items: center;
-    }
-
-    .project-title,
-    .project-summary,
-    .project-tech {
-        text-align: center;
-    }
-
-    .project-copy .btn-container {
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    section + section {
-        margin-top: 1.25rem;
-    }
-
-    #contact,
-    footer {
-        height: auto;
-    }
-
-    #profile {
-        height: auto;
-        min-height: 0;
-        margin-bottom: 0.75rem;
-    }
-
-    article {
-        font-size: 1rem;
-    }
-
-    footer nav {
-        height: fit-content;
-        margin-bottom: 2rem;
     }
 
     .about-containers,
-    .btn-container {
-        flex-wrap: wrap;
-    }
-
-    #socials-container {
-        margin-top: 1.25rem;
-    }
-
-    .about-containers {
-        gap: 1rem;
-    }
-
-    .details-container {
-        width: 100%;
-    }
-
+    .article-container,
+    .hero-info-grid,
     .contact-info-upper-container {
         grid-template-columns: 1fr;
-        padding: 0.8rem;
     }
 
-    .contact-info-container {
-        margin: 0;
-        padding: 0.75rem 0.85rem;
+    .hero-visual__badge--top,
+    .hero-visual__badge--bottom {
+        position: static;
+        margin-top: 0.75rem;
     }
 
-    .contact-info-container p,
-    .nav-links li a {
-        font-size: 0.95rem;
+    .hero-visual {
+        display: grid;
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    html {
+        scroll-padding-top: 5.5rem;
     }
 
-    .experience-sub-title {
-        font-size: 1.25rem;
+    main {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
     }
 
     .logo {
-        font-size: 1.35rem;
+        max-width: 14rem;
+        font-size: 1rem;
     }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+    .mobile-nav-actions {
+        gap: 0.55rem;
     }
 
-    .section__pic-container {
-        width: min(78vw, 280px);
-        height: auto;
-        justify-content: center;
-        margin: 0 auto 1.25rem;
+    .theme-toggle {
+        width: 4rem;
     }
 
-    .section__pic-container img,
-    .about-pic {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
+    .hero-description,
+    .section-description,
+    .text-card p {
+        font-size: 0.98rem;
     }
 
-    .section-container {
-        gap: 1.5rem;
+    .section__text__p1 {
+        font-size: 0.82rem;
     }
 
     .section__text__p2 {
         font-size: 1.05rem;
     }
 
-    .title {
-        font-size: 1.9rem;
-    }
-
-    .menu-links a {
-        font-size: 1.1rem;
-    }
-
-    .text-container {
-        text-align: justify;
+    .project-meta {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .project-demo-canvas {
-        width: min(100%, 300px);
+        width: 100%;
+    }
+
+    footer nav {
+        padding: 1rem 0.85rem;
     }
 }
 
 @media screen and (max-width: 420px) {
-    nav {
-        height: 10vh;
+    .site-nav {
+        border-radius: 1.1rem;
     }
 
-    .logo {
-        font-size: 1.15rem;
+    .hero-section,
+    .panel-section,
+    footer nav {
+        border-radius: 1.25rem;
     }
 
-    .title {
-        font-size: 1.6rem;
+    .hero-section,
+    .panel-section,
+    .project-card,
+    .details-container,
+    .contact-info-container,
+    .info-card {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
-    .section__text__p1 {
-        font-size: 0.9rem;
+    .social-link {
+        width: 3rem;
+        height: 3rem;
     }
 
-    .section__text__p2 {
-        font-size: 0.95rem;
-    }
-
-    .contact-info-container p {
-        font-size: 0.88rem;
-    }
-
-    .contact-info-upper-container {
-        padding: 0.65rem;
-        gap: 0.65rem;
+    .contact-info-container {
+        align-items: flex-start;
     }
 }
